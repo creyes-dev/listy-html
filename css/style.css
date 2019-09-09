@@ -1,0 +1,278 @@
+/* Fuentes */
+
+@import 'fonts.css';
+
+/* Estilos generales */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Sans', sans-serif
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1 {
+  color: #fff;
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+h3 { 
+  width: 100%;
+  margin-top: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+h3:first-letter { 
+  color: #dca453; 
+}
+
+.ly-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.ly-align-center {
+  align-items: center;
+}
+
+/* Encabezado */
+
+header { 
+  position: relative;
+}
+
+header nav {
+  position: fixed;
+  width: 100%;
+  background: rgb(0,0,0, .5);
+  padding: 10px 0;
+  z-index: 999;
+}
+
+header nav ul.ly-navigation { 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+header nav ul.ly-navigation {
+
+}
+
+header nav ul.ly-navigation li a {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0 16px;
+}
+
+header nav ul.ly-navigation li:last-child a {
+  padding-right: 0;
+}
+
+header nav ul.ly-navigation li a:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  opacity: 0;
+  background-color: #ffb81c;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+header nav ul.ly-navigation li a:hover:after {
+  width: 100%;
+  opacity: 1;
+}
+
+.ly-header-content {
+
+}
+
+.ly-header-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.5);
+  flex-direction: column;
+}
+
+.ly-main-banner {
+  display: block;
+  width: 100%;
+}
+
+.ly-header-text .ly-arrow { 
+  display: inline-block;
+  border: solid #fff;
+  padding: 20px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.ly-arrow:hover {
+  opacity: .7;
+}
+
+/* Logo */
+
+.ly-logo {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Secciones */
+
+.ly-section {
+  padding: 85px 0;
+}
+
+/* Gallery */
+
+#ly-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#ly-gallery li {
+  width: 20%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#ly-gallery li img {
+  display: block;
+  width: 100%;
+  -webkit-transform: all .3s ease;
+  transition: all .3s ease;
+}
+
+#ly-gallery li:hover img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+#ly-gallery li:after { 
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+}
+
+#ly-gallery li:hover:after { 
+  width: 0;
+  -webkit-transform: all .3s ease;
+  transition: all .3s ease;
+}
+/* Animaciones  */
+
+.ly-pulsate {
+  -webkit-animation: pulsate 3s ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: .3;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: .3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .3;
+  }
+}
+
+/* Testimonios */
+
+#ly-testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ly-testimonials {
+  max-width: 500px;
+}
+
+.ly-testimonials ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  overflow: hidden;
+}
+
+.ly-testimonials ul li {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-testimonials ul li .ly-user-name {
+  display: block;
+  margin: 15px 0;
+}
+
+.ly-testimonials ul li > p {
+  font-style: italic;
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
+}
+
+.ly-testimonials ul li .ly-user-data img {
+  border-radius: 100%;
+}
+
+/* Conocenos */
+
+#ly-about .ly-column { 
+  width: 48%;
+  margin-top: 25px;
+  text-align: center;
+}
+
+#ly-about i {
+  font-size: 45px;
+  color: #dca453;
+}
