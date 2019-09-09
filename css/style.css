@@ -230,6 +230,7 @@ header nav ul.ly-navigation li a:hover:after {
 }
 
 .ly-testimonials {
+  position: relative;
   max-width: 500px;
 }
 
@@ -262,6 +263,36 @@ header nav ul.ly-navigation li a:hover:after {
 
 .ly-testimonials ul li .ly-user-data img {
   border-radius: 100%;
+}
+
+.ly-testimonials .ly-arrow {
+  position: absolute;
+  top: 10%;
+  display: inline-block;
+  border: solid #eee;
+  padding: 20px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+  -webkit-transform: border-color .3s ease;
+  transition: border-color .3s ease;
+}
+
+.ly-testimonials .ly-arrow:hover {
+  border-color: #dca453;
+}
+
+
+.ly-testimonials .ly-arrow.ly-arrow-left {
+  right: 120%;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.ly-testimonials .ly-arrow.ly-arrow-right {
+  left: 120%;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* Conocenos */
