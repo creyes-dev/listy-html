@@ -307,3 +307,53 @@ header nav ul.ly-navigation li a:hover:after {
   font-size: 45px;
   color: #dca453;
 }
+
+/* Contacto */
+
+#ly-contact {
+  background: #f8f8f8;
+}
+
+#ly-contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#ly-contact form input:not([type="submit"]),
+#ly-contact form textarea { 
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: solid 1px #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#ly-contact form textarea { 
+  height: 100px;
+  resize: none;
+}
+
+#ly-contact form *::-webkit-input-placeholder {
+  color: #ccc;
+  font-style: italic;
+}
+
+#ly-contact form *::-moz-placeholder {
+  color: #ccc;
+  font-style: italic;
+}
+
+#ly-contact form *::-ms-input-placeholder {
+  color: #ccc;
+  font-style: italic;
+}
+
+#ly-contact form *::-moz-input-placeholder {
+  color: #ccc;
+  font-style: italic;
+}
