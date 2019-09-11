@@ -22,8 +22,8 @@
 
         const sectionId = event.target.getAttribute("href") || event.target.dataset.href;
         scrollTopSection(sectionId);
-      });
-    });
+      })
+    })
   }
 
   const scrollTopSection = sectionId => {
@@ -43,16 +43,35 @@
       'behavior': 'smooth',
       'left': 0,
       'top': sectionPosition
-    });
+    })
+  }
 
+  const onTestimonialChange = () => {
+    let firstChild, lastChild;
+    const prevArrow = document.querySelector("#ly-testimonials-prev");
+    const nextArrow = document.querySelector("#ly-testimonials-next");
+    const testimonials = document.querySelector(".ly-testimonials ul");
+
+    document.addEventListener("click", () => {
+      if(event.target === prevArrow) {
+        // Posicionar al ultimo li como el primer li dentro del ul dentro del div ly-testimonials
+        lastChild = testimonials.lastElementChild;
+        testimonials.insertAdjacentElement("afterbegin", lastChild);
+      } else if (event.target === nextArrow) {
+        // Posicionar al primer li como el ultimo li dentro del ul dentro del div ly-testimonials
+        firstChild = testimonials.firstElementChild;
+        testimonials.insertAdjacentElement("beforeend", firstChild);
+      }
+    })
   }
 
   // The scroll event allows to react on a page or element scrolling. There are quite a few good things we can do here.
   // window.addEventListener('scroll', function() { addMenuBackground });
   window.addEventListener("scroll", () => {
     addMenuBackground();
-  }); 
+  })
 
   onNavItemClick();
+  onTestimonialChange()
 
 })();
