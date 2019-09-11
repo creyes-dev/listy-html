@@ -57,10 +57,17 @@ header {
 
 header nav {
   position: fixed;
+  margin: 10px 0;
   width: 100%;
-  background: rgb(0,0,0, .5);
   padding: 10px 0;
   z-index: 999;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+header nav.ly-nav-fixed {
+  margin: 0;
+  background: rgb(0,0,0, .5);
 }
 
 header nav ul.ly-navigation { 
