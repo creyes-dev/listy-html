@@ -53,15 +53,7 @@
     const testimonials = document.querySelector(".ly-testimonials ul");
 
     document.addEventListener("click", () => {
-      if(event.target === prevArrow) {
-        // Posicionar al ultimo li como el primer li dentro del ul dentro del div ly-testimonials
-        lastChild = testimonials.lastElementChild;
-        testimonials.insertAdjacentElement("afterbegin", lastChild);
-      } else if (event.target === nextArrow) {
-        // Posicionar al primer li como el ultimo li dentro del ul dentro del div ly-testimonials
-        firstChild = testimonials.firstElementChild;
-        testimonials.insertAdjacentElement("beforeend", firstChild);
-      }
+      
     })
   }
 
@@ -72,6 +64,6 @@
   })
 
   onNavItemClick();
-  onTestimonialChange()
+  onTestimonialChange();
 
 })();
