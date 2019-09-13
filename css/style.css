@@ -207,6 +207,38 @@ header nav ul.ly-navigation li a:hover:after {
   -webkit-transform: all .3s ease;
   transition: all .3s ease;
 }
+
+.ly-backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.9);
+  z-index: 9999;
+}
+
+.ly-backdrop img {
+  max-width: 80%;
+}
+
+span.ly-backdrop-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  color: #fff;
+  border: solid 1px #fff;
+  border-radius: 100%;
+}
+
 /* Animaciones  */
 
 .ly-pulsate {

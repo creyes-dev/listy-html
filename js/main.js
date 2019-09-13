@@ -46,16 +46,60 @@
     })
   }
 
-  const onTestimonialChange = () => {
-    let firstChild, lastChild;
-    const prevArrow = document.querySelector("#ly-testimonials-prev");
-    const nextArrow = document.querySelector("#ly-testimonials-next");
-    const testimonials = document.querySelector(".ly-testimonials ul");
+	const onTestimonialChange = () => {
+		let firstChild, lastChild;
+        const prevArrow = document.querySelector("#ly-testimonials-prev");
+        const nextArrow = document.querySelector("#ly-testimonials-next");
+        const testimonials = document.querySelector(".ly-testimonials ul");
 
-    document.addEventListener("click", () => {
-      
+        document.addEventListener("click", () => {
+          
+          // Incopatibilidad del navegador firefox 60.9.0esr
+
+          /*
+          if(event.target === prevArrow) {
+            // Posicionar al ultimo li como el primer li dentro del ul dentro del div ly-testimonials
+            lastChild = testimonials.lastElementChild;
+            testimonials.insertAdjacentElement("afterbegin", lastChild);
+          } else if (event.target === nextArrow) {
+            // Posicionar al primer li como el ultimo li dentro del ul dentro del div ly-testimonials
+            firstChild = testimonials.firstElementChild;
+            testimonials.insertAdjacentElement("beforeend", firstChild);
+          }
+        */
+        })
+  }
+
+  const onGalleryImageClick = () => {
+    const galleryImageList = document.querySelectorAll("#ly-gallery li");
+    const galleryImages = [...galleryImageList];
+
+    galleryImages.forEach(image => {
+      image.addEventListener("click", event => {
+        galleryImageOpen(event.target);
+      })
     })
   }
+  
+  
+	const galleryImageOpen = image => {
+		const imageSrc = image.getAttribute("src");
+		const openedImage = `<div class='ly-backdrop'><img src='${imageSrc}' alt='' />
+                        <span class="ly-backdrop-close">X</span></div>`;
+                        
+    // Insertar al final del documento el bloque html creado
+    document.body.insertAdjacentHTML("beforeend", openedImage);
+    galleryImageClose();
+  }
+  
+	const galleryImageClose = () => {
+    const closeButton = document.querySelector(".ly-backdrop-close");
+
+    closeButton.addEventListener("click", () => {
+      const backdrop = document.querySelector(".ly-backdrop");
+      backdrop.remove();
+    })
+	}
 
   // The scroll event allows to react on a page or element scrolling. There are quite a few good things we can do here.
   // window.addEventListener('scroll', function() { addMenuBackground });
@@ -65,5 +109,6 @@
 
   onNavItemClick();
   onTestimonialChange();
+  onGalleryImageClick();
 
 })();
