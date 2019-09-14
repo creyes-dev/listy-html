@@ -77,10 +77,6 @@ header nav ul.ly-navigation {
   list-style-type: none;
 }
 
-header nav ul.ly-navigation {
-
-}
-
 header nav ul.ly-navigation li a {
   display: block;
   color: #fff;
@@ -109,8 +105,8 @@ header nav ul.ly-navigation li a:hover:after {
   opacity: 1;
 }
 
-.ly-header-content {
-
+header nav .ly-nav-toggle {
+  display: none;
 }
 
 .ly-header-text {
@@ -446,4 +442,88 @@ footer .ly-social-icons li a {
 
 footer .ly-social-icons li a:hover { 
   opacity: .7;
+}
+
+/* Responsive */
+
+@media all and (max-width: 1020px) {
+  .aw-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media all and (max-width: 820px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  .ly-header-text .ly-arrow, 
+  .ly-testimonials .ly-arrow {
+    padding: 15px;
+  }
+
+  .ly-testimonials, ly-arrow.ly-arrow-right {
+    left: 100%;
+  }
+
+  .ly-testimonials, ly-arrow.ly-arrow-left {
+    right: 100%;
+  }
+
+}
+
+@media all and (max-width: 680px) {
+
+  header nav {
+    position: absolute;
+  }
+
+  header nav.ly-nav-fixed {
+    background: none;
+  }
+
+  ul.ly-navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0,0,0,.7);
+    -webkit-transition: max-height .6s ease;
+    transition: max-height .6s ease;
+  }
+
+  ul.ly-navigation.ly-navigation-opened {
+    max-height: 500px;
+    -webkit-transition: max-height 1.3s ease;
+    transition: max-height 1.3s ease;
+  }
+
+  ul.ly-navigation li {
+    padding: 0 15px;
+  }
+
+  ul.ly-navigation li a {
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    border-bottom: solid 1px #999;
+  }
+
+  ul.ly-navigation li:first-child a {
+    padding-top: 20px;
+  }
+
+  ul.ly-navigation li:last-child a {
+    padding-bottom: 20px;
+    border-bottom: none;
+  }
+
+  header nav .ly-nav-toggle {
+    display: block;
+    color: #fff;
+    font-size: 25px;
+  }
+
 }
