@@ -525,5 +525,42 @@ footer .ly-social-icons li a:hover {
     color: #fff;
     font-size: 25px;
   }
+}
 
+@media all and (max-width: 600px) {
+
+  .ly-logo {
+    width: 50px;
+  }
+
+  h1, h3 {
+    font-size: 35px;
+  }
+
+  .ly-header-text .ly-arrow, 
+  .ly-testimonials .ly-arrow {
+    padding: 10px;
+  }
+
+  #ly-about .ly-column {
+    width: 100%;
+  }
+
+  #ly-gallery li {
+    width: 33.33%
+  }
+
+  .ly-testimonials {
+    max-width: 80%;
+  }
+
+  .ly-testimonials ul li > p {
+    font-size: 17px;
+  }
+
+  #ly-contact form input:not([type="submit"]),
+  #ly-contact form textarea { 
+    width: 90%;
+    padding: 12px;
+  }
 }
